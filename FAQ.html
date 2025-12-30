@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>FAQ - TechPro</title>
+  <link rel="icon" href="growwpark_logo.jpg">
+
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="FAQ.css">
+</head>
+<body>
+<div id="header-placeholder"></div>
+
+<section class="hero-new">
+  <div class="hero-glass">
+      <h1>Find Answers Instantly</h1>
+      <p>Your questions — solved with clarity, simplicity and intelligence.</p>
+  </div>
+  <div class="hero-waves"></div>
+</section>
+
+<section class="faq-modern">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item"><button class="faq-question">What is TechPro AI?</button><div class="faq-answer"><p>TechPro AI is an advanced suite of automation and intelligence tools designed to boost workflow efficiency...</p></div></div>
+  <div class="faq-item"><button class="faq-question">Do I need coding experience?</button><div class="faq-answer"><p>No. Our tools are built for everyone, from beginners to experts. We also provide APIs for developers.</p></div></div>
+  <div class="faq-item"><button class="faq-question">Is my data secure?</button><div class="faq-answer"><p>We use top-tier encryption, secure cloud environments, and routine audits to protect user data.</p></div></div>
+  <div class="faq-item"><button class="faq-question">How often do you update your products?</button><div class="faq-answer"><p>We release improvements and features every month based on customer feedback and AI research.</p></div></div>
+</section>
+
+<section class="support-modern">
+    <h2>Need Assistance?</h2>
+    <p class="sub">We're here to support you anytime.</p>
+    <div class="support-row">
+        <div class="support-card pink-border"><div class="icon-wrap pink-bg">💬</div><h3>Live Chat</h3><p>Connect instantly with our support engineers.</p><a href="#" class="btn">Start Chat →</a></div>
+        <div class="support-card purple-border"><div class="icon-wrap purple-bg">📧</div><h3>Email Support</h3><p>Send us your query and get a reply within 24 hours.</p><a href="#" class="btn">Send Email →</a></div>
+        <div class="support-card green-border"><div class="icon-wrap green-bg">📘</div><h3>Documentation</h3><p>Explore guides, tutorials, and API references.</p><a href="#" class="btn">View Docs →</a></div>
+    </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script>
+const faqButtons = document.querySelectorAll(".faq-question");
+faqButtons.forEach(btn => { btn.addEventListener("click", () => { btn.classList.toggle("active"); let answer = btn.nextElementSibling; answer.style.maxHeight = answer.style.maxHeight ? null : answer.scrollHeight + "px"; }); });
+</script>
+<script src="common.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,986 @@
+/* ============================================
+   UNIVERSAL RESPONSIVE CSS
+   ============================================
+   
+   BREAKPOINT SUMMARY:
+   -------------------
+   DESKTOP (Navbar Visible):
+   - 1920×1080, 1536×864, 1366×768, 1280×720, 1280×800
+   - Breakpoint: min-width: 1280px
+   
+   TABLET (Mixed):
+   - 768×1024 → Hamburger
+   - 800×1280 → Hamburger  
+   - 820×1180 → Hamburger
+   - 1280×800 → Navbar visible
+   
+   MOBILE (Hamburger):
+   - 360×800, 390×844, 393×873, 412×915
+   - Breakpoint: max-width: 767px
+   
+   NO COLOR CHANGES - Layout and sizing only
+============================================ */
+
+/* ============================================
+   BASE STYLES - Mobile First Approach
+============================================ */
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ============================================
+   DESKTOP STYLES (1280px and above)
+   Navbar visible for: 1920×1080, 1536×864, 1366×768, 1280×720, 1280×800
+============================================ */
+@media screen and (min-width: 1280px) {
+    /* Navigation - Show navbar, hide hamburger */
+    .nav-links {
+        display: flex !important;
+    }
+    
+    .btn-group {
+        display: flex !important;
+    }
+    
+    .hamburger {
+        display: none !important;
+    }
+    
+    .mobile-menu {
+        display: none !important;
+    }
+    
+    /* Header */
+    header nav {
+        padding: 15px 60px;
+    }
+    
+    .logo {
+        font-size: 30px;
+    }
+    
+    .logo1 {
+        font-size: 30px;
+    }
+    
+    /* Hero Section */
+    .hero {
+        min-height: 85vh;
+        padding: 100px 60px;
+    }
+    
+    .hero:not(.hero-home) .hero-content {
+        flex-direction: row;
+        gap: 80px;
+        max-width: 1400px;
+    }
+    
+    .hero h1,
+    .left-text h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero p,
+    .hero-subtitle,
+    .left-text p {
+        font-size: 1.2rem;
+    }
+    
+    /* Grids - 4 columns */
+    .grids,
+    .feature-grid,
+    .tools-container,
+    .cta-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 30px;
+    }
+    
+    /* Membership - 4 columns */
+    .membership {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+    
+    /* Benefits - 4 columns */
+    .benefit-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+    
+    /* Reviews - 3 columns */
+    .star-rating {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Sections */
+    .features,
+    .offer-section,
+    .review-section,
+    .tools-section,
+    .tech-cta-container,
+    .tech-faq-section,
+    .benefits {
+        padding: 100px 60px;
+    }
+    
+    /* Footer */
+    .tech-footer {
+        padding: 80px 60px;
+    }
+    
+    .footer-links-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 50px;
+    }
+    
+    .footer-brand {
+        width: 30%;
+    }
+}
+
+/* ============================================
+   EXTRA LARGE DESKTOP (1536px and above)
+============================================ */
+@media screen and (min-width: 1536px) {
+    header nav {
+        padding: 15px 80px;
+    }
+    
+    .hero {
+        padding: 120px 80px;
+    }
+    
+    .hero h1,
+    .left-text h1 {
+        font-size: 4rem;
+    }
+    
+    .features,
+    .offer-section,
+    .review-section,
+    .tools-section,
+    .tech-cta-container,
+    .tech-faq-section {
+        padding: 120px 80px;
+    }
+}
+
+/* ============================================
+   FULL HD DESKTOP (1920px and above)
+============================================ */
+@media screen and (min-width: 1920px) {
+    header nav {
+        padding: 18px 100px;
+    }
+    
+    .hero {
+        min-height: 90vh;
+        padding: 140px 100px;
+    }
+    
+    .hero h1,
+    .left-text h1 {
+        font-size: 4.5rem;
+    }
+    
+    .hero-content {
+        max-width: 1600px;
+    }
+    
+    .grids,
+    .feature-grid,
+    .tools-container,
+    .cta-grid,
+    .star-rating {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+}
+
+/* ============================================
+   TABLET LANDSCAPE - Navbar Visible (1280×800)
+============================================ */
+@media screen and (min-width: 1280px) and (max-height: 900px) {
+    .nav-links {
+        display: flex !important;
+    }
+    
+    .btn-group {
+        display: flex !important;
+    }
+    
+    .hamburger {
+        display: none !important;
+    }
+    
+    .mobile-menu {
+        display: none !important;
+    }
+    
+    .hero {
+        min-height: auto;
+        height: auto;
+        padding: 100px 50px 80px;
+    }
+}
+
+/* ============================================
+   TABLET STYLES (768px - 1279px)
+   Hamburger menu for: 768×1024, 800×1280, 820×1180
+============================================ */
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+    /* Navigation - Show hamburger, hide navbar */
+    .nav-links {
+        display: none !important;
+    }
+    
+    .btn-group {
+        display: none !important;
+    }
+    
+    .hamburger {
+        display: block !important;
+    }
+    
+    /* Header */
+    header nav {
+        padding: 15px 30px;
+    }
+    
+    .logo {
+        font-size: 26px;
+    }
+    
+    .logo1 {
+        font-size: 26px;
+    }
+    
+    .nav-right {
+        gap: 15px;
+    }
+    
+    /* Hero */
+    .hero {
+        min-height: auto;
+        padding: 100px 30px 70px;
+    }
+    
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .left-text {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .hero h1,
+    .left-text h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero p,
+    .left-text p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .right-card {
+        width: 100%;
+        max-width: 450px;
+    }
+    
+    /* Grids - 2 columns */
+    .grids,
+    .feature-grid,
+    .tools-container,
+    .cta-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 25px;
+    }
+    
+    /* Membership - 2 columns */
+    .membership {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        width: 90%;
+    }
+    
+    /* Benefits - 2 columns */
+    .benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    /* Reviews - 2 columns */
+    .star-rating {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Sections */
+    .features,
+    .offer-section,
+    .review-section,
+    .tools-section,
+    .tech-cta-container,
+    .tech-faq-section,
+    .benefits {
+        padding: 70px 30px;
+    }
+    
+    /* Offer Section */
+    .offer-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .offer-left,
+    .offer-right {
+        width: 100%;
+    }
+    
+    .offer-right {
+        text-align: center;
+    }
+    
+    .offer-list {
+        max-width: 500px;
+        margin: 25px auto;
+    }
+    
+}
+
+/* ============================================
+   SPECIFIC TABLET: 820×1180 (iPad Air)
+============================================ */
+@media screen and (width: 820px) and (height: 1180px),
+       screen and (min-width: 800px) and (max-width: 850px) {
+    .hamburger {
+        display: block !important;
+    }
+    
+    .nav-links,
+    .btn-group {
+        display: none !important;
+    }
+    
+    .membership {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================
+   SPECIFIC TABLET: 768×1024 (iPad)
+============================================ */
+@media screen and (width: 768px) and (height: 1024px),
+       screen and (min-width: 750px) and (max-width: 790px) {
+    .hamburger {
+        display: block !important;
+    }
+    
+    .nav-links,
+    .btn-group {
+        display: none !important;
+    }
+    
+    .hero h1,
+    .left-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .membership {
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+    }
+}
+
+/* ============================================
+   MOBILE STYLES (max-width: 767px)
+   Hamburger menu for: 360×800, 390×844, 393×873, 412×915
+============================================ */
+@media screen and (max-width: 767px) {
+    /* Navigation - Show hamburger, hide navbar */
+    .nav-links {
+        display: none !important;
+    }
+    
+    .btn-group {
+        display: none !important;
+    }
+    
+    .hamburger {
+        display: block !important;
+    }
+    
+    /* Header */
+    header nav {
+        padding: 12px 15px;
+    }
+    
+    .logo {
+        font-size: 22px;
+    }
+    
+    .logo1 {
+        font-size: 22px;
+    }
+    
+    .nav-right {
+        gap: 8px;
+        margin-left: 0;
+    }
+    
+    .toggle-btn {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+    
+    .hamburger {
+        padding: 8px 10px;
+        font-size: 18px;
+    }
+    
+    /* Mobile Menu */
+    .mobile-menu {
+        top: 60px;
+        padding: 20px 15px;
+        gap: 12px;
+    }
+    
+    .mobile-menu a {
+        font-size: 16px;
+        padding: 10px 0;
+    }
+    
+    /* Hero */
+    .hero {
+        min-height: 70vh;
+        padding: 40px 20px;
+    }
+    
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .left-text {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .hero h1,
+    .left-text h1 {
+        font-size: 32px;
+        line-height: 1.3;
+    }
+    
+    .hero p,
+    .hero-subtitle,
+    .left-text p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    .right-card {
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    .glass-box {
+        padding: 25px 20px;
+    }
+    
+    .glass-box h3 {
+        font-size: 20px;
+    }
+    
+    .cta-btn {
+        width: 100%;
+        max-width: 250px;
+        padding: 14px 24px;
+        font-size: 15px;
+    }
+    
+    /* Grids - 1 column */
+    .grids,
+    .feature-grid,
+    .tools-container,
+    .cta-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+    
+    /* Membership - 1 column */
+    .membership {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 92%;
+    }
+    
+    .plan {
+        padding: 25px 20px;
+    }
+    
+    /* Benefits - 1 column */
+    .benefit-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .benefit-card {
+        padding: 20px;
+    }
+    
+    /* Reviews - 1 column */
+    .star-rating {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .rating {
+        padding: 20px 15px;
+    }
+    
+    /* Sections */
+    .features,
+    .offer-section,
+    .review-section,
+    .tools-section,
+    .tech-cta-container,
+    .tech-faq-section,
+    .benefits {
+        padding: 50px 15px;
+    }
+    
+    /* Titles */
+    .title,
+    .section-title,
+    .cta-main-title,
+    .faq-title {
+        font-size: 1.6rem;
+    }
+    
+    .subtitle,
+    .section-subtitle,
+    .sub-title,
+    .cta-sub-title,
+    .faq-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    /* Cards */
+    .grid1,
+    .card,
+    .card1,
+    .tool-card,
+    .cta-card {
+        padding: 20px 15px;
+    }
+    
+    .grid1 img,
+    .card img {
+        height: 180px;
+    }
+    
+    .grid1 h3,
+    .card h3,
+    .tool-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .grid1 p,
+    .card p,
+    .tool-card p {
+        font-size: 0.9rem;
+    }
+    
+    /* Offer Section */
+    .offer-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 15px;
+    }
+    
+    .offer-left,
+    .offer-right {
+        width: 100%;
+    }
+    
+    .offer-right h2 {
+        font-size: 1.6rem;
+    }
+    
+    .offer-right p {
+        font-size: 0.95rem;
+    }
+    
+    .offer-list {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    
+    .offer-list li {
+        font-size: 0.9rem;
+        padding-left: 28px;
+    }
+    
+    .offer-btn {
+        width: 100%;
+        max-width: 220px;
+        padding: 14px 25px;
+        font-size: 1rem;
+    }
+    
+    /* FAQ */
+    .faq-wrapper {
+        gap: 12px;
+    }
+    
+    .faq-item {
+        padding: 15px;
+    }
+    
+    .faq-question {
+        font-size: 1rem;
+    }
+    
+    .faq-answer {
+        font-size: 0.85rem;
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .hero h1,
+    .left-text h1 {
+        font-size: 24px;
+    }
+
+    .hero p,
+    .hero-subtitle,
+    .left-text p {
+        font-size: 14px;
+    }
+}
+
+/* ============================================
+   SPECIFIC MOBILE: 412×915 (Pixel 6/7)
+============================================ */
+@media screen and (width: 412px) and (height: 915px),
+       screen and (min-width: 410px) and (max-width: 420px) {
+    header nav {
+        padding: 12px 18px;
+    }
+    
+    .hero h1,
+    .left-text h1 {
+        font-size: 24px;
+    }
+    
+    .membership {
+        width: 94%;
+    }
+}
+
+/* ============================================
+   SPECIFIC MOBILE: 393×873 (Pixel 5)
+============================================ */
+@media screen and (width: 393px) and (height: 873px),
+       screen and (min-width: 390px) and (max-width: 400px) {
+    header nav {
+        padding: 12px 16px;
+    }
+    
+    .hero h1,
+    .left-text h1 {
+        font-size: 24px;
+    }
+}
+
+/* ============================================
+   SPECIFIC MOBILE: 390×844 (iPhone 12/13/14)
+============================================ */
+@media screen and (width: 390px) and (height: 844px),
+       screen and (min-width: 385px) and (max-width: 395px) {
+    header nav {
+        padding: 12px 16px;
+    }
+    
+    .hero h1,
+    .left-text h1 {
+        font-size: 24px;
+    }
+    
+    .nav-right {
+        gap: 6px;
+    }
+}
+
+/* ============================================
+   SPECIFIC MOBILE: 360×800 (Small Android)
+============================================ */
+@media screen and (width: 360px) and (height: 800px),
+       screen and (max-width: 370px) {
+    header nav {
+        padding: 10px 12px;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+    
+    .logo1 {
+        font-size: 20px;
+    }
+    
+    .nav-right {
+        gap: 5px;
+    }
+    
+    .toggle-btn {
+        padding: 6px 8px;
+        font-size: 13px;
+    }
+    
+    .hamburger {
+        padding: 6px 8px;
+        font-size: 16px;
+    }
+    
+    .hero h1,
+    .left-text h1 {
+        font-size: 24px;
+    }
+    
+    .hero p,
+    .left-text p {
+        font-size: 14px;
+    }
+    
+    .title,
+    .section-title,
+    .cta-main-title,
+    .faq-title {
+        font-size: 1.4rem;
+    }
+    
+    .features,
+    .offer-section,
+    .review-section,
+    .tools-section,
+    .tech-cta-container,
+    .tech-faq-section {
+        padding: 40px 12px;
+    }
+}
+
+/* ============================================
+   EXTRA SMALL MOBILE (max-width: 340px)
+============================================ */
+@media screen and (max-width: 340px) {
+    header nav {
+        padding: 8px 10px;
+    }
+    
+    .logo {
+        font-size: 18px;
+    }
+    
+    .logo1 {
+        font-size: 18px;
+    }
+    
+    .hero h1,
+    .left-text h1 {
+        font-size: 1.5rem;
+    }
+    
+    .cta-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
+/* ============================================
+   LANDSCAPE ORIENTATION FIXES
+============================================ */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .hero {
+        min-height: auto;
+        height: auto;
+        padding: 80px 20px 40px;
+    }
+    
+    .mobile-menu {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+}
+
+/* ============================================
+   HERO SECTION - PRODUCT PAGE SPECIFIC
+============================================ */
+@media screen and (max-width: 767px) {
+    .hero-modern {
+        padding: 100px 15px 60px;
+    }
+    
+    .hero-container {
+        flex-direction: column;
+        height: auto;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .hero-left {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .hero-left h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-left p {
+        font-size: 1rem;
+    }
+    
+    .hero-img {
+        width: 100%;
+        max-width: 350px;
+        height: 250px;
+        margin-right: 0;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+    .hero-modern {
+        padding: 120px 30px 80px;
+    }
+    
+    .hero-container {
+        flex-direction: column;
+        height: auto;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .hero-left {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .hero-left h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero-img {
+        width: 100%;
+        max-width: 450px;
+        margin-right: 0;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .hero-modern {
+        padding: 150px 60px;
+    }
+    
+    .hero-container {
+        flex-direction: row;
+        height: 60vh;
+        gap: 60px;
+        text-align: left;
+    }
+    
+    .hero-left {
+        text-align: left;
+    }
+    
+    .hero-left h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero-img {
+        margin-right: 100px;
+    }
+}
+
+/* ============================================
+   UTILITY CLASSES
+============================================ */
+.hide-mobile {
+    display: block;
+}
+
+.show-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .hide-mobile {
+        display: none !important;
+    }
+    
+    .show-mobile {
+        display: block !important;
+    }
+}
+
+.hide-tablet {
+    display: block;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+    .hide-tablet {
+        display: none !important;
+    }
+}
+
+.hide-desktop {
+    display: none;
+}
+
+@media screen and (max-width: 1279px) {
+    .hide-desktop {
+        display: block !important;
+    }
+}
+
+/* Text center on mobile */
+@media screen and (max-width: 767px) {
+    .text-center-mobile {
+        text-align: center !important;
+    }
+}
+
+/* Full width on mobile */
+@media screen and (max-width: 767px) {
+    .full-width-mobile {
+        width: 100% !important;
+    }
+}

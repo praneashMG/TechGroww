@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Product Dashboard</title>
+    <link rel="icon" href="growwpark_logo.jpg">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <div class="brand">
+            <h2><a href="index.html">Groww</a><span> TechPro</span></h2>
+        </div>
+        <i class="fa-solid fa-xmark close-btn" onclick="toggleSidebar()"></i>
+    </div>
+
+    <div class="user-box">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHByb2ZpbGUlMjBwaWN8ZW58MHx8MHx8fDA%3D" alt="">
+        <h4>Sathiya</h4>
+        <p>admin@techhub.com</p>
+    </div>
+
+    <ul class="menu">
+        <li class="active"><a href="#" aria-current="page">📊 Dashboard</a></li>
+        <li><a href="#">👥 Users</a></li>
+        <li><a href="#">🤖 AI Tools</a></li>
+        <li><a href="#">📈 Analytics</a></li>
+        <li><a href="#">📦 Content</a></li>
+        <li><a href="#">🔔 Notifications</a></li>
+        <li><a href="#">📁 Reports</a></li>
+        <li><a href="#">⚙ Settings</a></li>
+        <li><a href="login.html">⏻ Logout</a></li>
+    </ul>
+</aside>
+
+<div class="main">
+
+    <header class="topbar">
+        <div class="topbar-left">
+            <i class="fa-solid fa-bars menu-btn" onclick="toggleSidebar()"></i>
+            <h2>Admin Dashboard</h2>
+        </div>
+
+        <div class="right">
+
+            <button id="themeToggle" class="toggle-btn">🌙</button>
+
+            <button id="rtlToggle" class="toggle-btn">⇆</button>
+
+            <span class="icon">🌍</span>
+
+            <div class="bell" id="notificationBell" role="button" tabindex="0" aria-label="Notifications">
+                <span>🔔</span>
+                <span class="count">3</span>
+            </div>
+
+            <img src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D" class="profile">
+            <span class="arrow">▼</span>
+        </div>
+    </header>
+
+<script>
+const html = document.documentElement;
+const themeBtn = document.getElementById("themeToggle");
+const rtlBtn = document.getElementById("rtlToggle");
+const notificationBell = document.getElementById("notificationBell");
+const notificationsSection = document.getElementById("notifications");
+
+themeBtn.addEventListener("click", () => {
+    html.classList.toggle("dark");
+    themeBtn.textContent = html.classList.contains("dark") ? "☀️" : "🌙";
+});
+
+rtlBtn.addEventListener("click", () => {
+    html.classList.toggle("rtl");
+});
+
+function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("show");
+}
+
+if (notificationBell && notificationsSection) {
+    const openNotifications = () => {
+        notificationsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
+    notificationBell.addEventListener("click", openNotifications);
+    notificationBell.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openNotifications();
+        }
+    });
+}
+</script>
+
+<section class="stats">
+    <div class="card stat-card">
+        <div class="left">
+            <h3>1,540</h3>
+            <p>Total Users</p>
+            <span class="up">↑ 18% increase</span>
+        </div>
+        <div class="icon-box blue">👤</div>
+    </div>
+
+    <div class="card stat-card">
+        <div class="left">
+            <h3>38</h3>
+            <p>Active Tools</p>
+            <span class="up">↑ 7% growth</span>
+        </div>
+        <div class="icon-box green">⚙</div>
+    </div>
+
+    <div class="card stat-card">
+        <div class="left">
+            <h3>980K</h3>
+            <p>API Requests</p>
+            <span class="up">↑ 11% this month</span>
+        </div>
+        <div class="icon-box yellow">🔄</div>
+    </div>
+
+    <div class="card stat-card">
+        <div class="left">
+            <h3>$32,400</h3>
+            <p>Revenue</p>
+            <span class="up">↑ 22% growth</span>
+        </div>
+        <div class="icon-box purple">💰</div>
+    </div>
+</section>
+
+
+
+<section class="grid">
+    
+    <div class="card activity">
+        <div class="header-line">
+            <h3>Recent Activity</h3>
+            <a href="#">View All</a>
+        </div>
+
+        <ul>
+            <li>
+                <span class="dot pink"></span>
+                <div>
+                    <h4>New User Signup</h4>
+                    <p>Sarah joined your platform</p>
+                    <small>2 minutes ago</small>
+                </div>
+            </li>
+
+            <li>
+                <span class="dot green"></span>
+                <div>
+                    <h4>AI Module Updated</h4>
+                    <p>Insight Engine v3.0 released</p>
+                    <small>1 hour ago</small>
+                </div>
+            </li>
+
+            <li>
+                <span class="dot yellow"></span>
+                <div>
+                    <h4>API Limit Warning</h4>
+                    <p>High request usage detected</p>
+                    <small>3 hours ago</small>
+                </div>
+            </li>
+
+            <li>
+                <span class="dot blue"></span>
+                <div>
+                    <h4>New Feature Added</h4>
+                    <p>Chat module extended</p>
+                    <small>Yesterday</small>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- NOTIFICATIONS -->
+    <div class="card notify" id="notifications">
+        <div class="header-line">
+            <h3>Notifications</h3>
+            <a href="#">View All</a>
+        </div>
+
+        <div class="note light-blue">
+            <h4>System Upgrade</h4>
+            <p>Scheduled maintenance tomorrow</p>
+        </div>
+
+        <div class="note light-yellow">
+            <h4>Login Alert</h4>
+            <p>Unusual login attempt detected</p>
+        </div>
+
+        <div class="note light-green">
+            <h4>Tool Available</h4>
+            <p>Automation AI v2.5 released</p>
+        </div>
+
+        <div class="note light-pink">
+            <h4>Usage Spike</h4>
+            <p>API consumption increased by 70%</p>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- USER MANAGEMENT -->
+<section class="user-management card">
+    <div class="section-header">
+        <h3>Manage Users</h3>
+        <a href="#">View All</a>
+    </div>
+
+    <div class="user-table">
+        <div class="table-row table-head">
+            <div>User</div>
+            <div>Role</div>
+            <div>Status</div>
+            <div>Actions</div>
+        </div>
+
+        <div class="table-row">
+            <div class="user-info">
+                <img src="https://i.pravatar.cc/40?img=1">
+                <div>
+                    <h4>John Doe</h4>
+                    <p>john@example.com</p>
+                </div>
+            </div>
+            <div>Client</div>
+            <div><span class="badge active">Active</span></div>
+            <div><a href="#">Edit</a> <a class="del" href="#">Delete</a></div>
+        </div>
+
+        <div class="table-row">
+            <div class="user-info">
+                <img src="https://i.pravatar.cc/40?img=5">
+                <div>
+                    <h4>Sarah Johnson</h4>
+                    <p>sarah@example.com</p>
+                </div>
+            </div>
+            <div>Client</div>
+            <div><span class="badge active">Active</span></div>
+            <div><a href="#">Edit</a> <a class="del" href="#">Delete</a></div>
+        </div>
+
+        <div class="table-row">
+            <div class="user-info">
+                <img src="https://i.pravatar.cc/40?img=9">
+                <div>
+                    <h4>Mike Wilson</h4>
+                    <p>mike@example.com</p>
+                </div>
+            </div>
+            <div>Admin</div>
+            <div><span class="badge active">Active</span></div>
+            <div><a href="#">Edit</a> <a class="del" href="#">Delete</a></div>
+        </div>
+
+        <div class="table-row">
+            <div class="user-info">
+                <img src="https://i.pravatar.cc/40?img=3">
+                <div>
+                    <h4>Emily Davis</h4>
+                    <p>emily@example.com</p>
+                </div>
+            </div>
+            <div>Client</div>
+            <div><span class="badge pending">Pending</span></div>
+            <div><a href="#">Edit</a> <a class="del" href="#">Delete</a></div>
+        </div>
+
+        <button class="add-user-btn">+ Add New User</button>
+    </div>
+</section>
+
+
+<!-- SIDE PANELS -->
+<section class="side-panels">
+    
+    <div class="quick-actions card">
+        <h3>Quick Actions</h3>
+
+        <div class="qa-grid">
+            <div class="qa-item">
+                <span class="qa-icon pink">📁</span>
+                <p>New Project</p>
+            </div>
+            <div class="qa-item">
+                <span class="qa-icon green">📄</span>
+                <p>Generate Report</p>
+            </div>
+            <div class="qa-item">
+                <span class="qa-icon yellow">📢</span>
+                <p>Send Notification</p>
+            </div>
+            <div class="qa-item">
+                <span class="qa-icon purple">⚙</span>
+                <p>System Settings</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="system-status card">
+        <h3>System Status</h3>
+
+        <div class="status-row ok">
+            <span class="dot green"></span>
+            <p>Database</p>
+            <span class="state">Operational</span>
+        </div>
+
+        <div class="status-row ok">
+            <span class="dot green"></span>
+            <p>Web Server</p>
+            <span class="state">Operational</span>
+        </div>
+
+        <div class="status-row warn">
+            <span class="dot yellow"></span>
+            <p>Backup Service</p>
+            <span class="state degrade">Degraded</span>
+        </div>
+
+        <div class="status-row ok">
+            <span class="dot green"></span>
+            <p>Email Service</p>
+            <span class="state">Operational</span>
+        </div>
+    </div>
+
+</section>
+
+
+<section class="recent-projects card">
+    <div class="section-header">
+        <h3>Recent Projects</h3>
+        <a href="#">View All</a>
+    </div>
+
+    <div class="project-table">
+
+        <div class="proj-row head">
+            <div>Project</div>
+            <div>Client</div>
+            <div>Status</div>
+            <div>Progress</div>
+            <div>Due Date</div>
+        </div>
+
+        <div class="proj-row">
+            <div>
+                <h4>E-commerce Platform</h4>
+                <p>TechCorp Inc.</p>
+            </div>
+            <div>John Doe</div>
+            <div><span class="proj-badge green">Completed</span></div>
+            <div>
+                <div class="progress green"></div>
+            </div>
+            <div>Oct 15, 2025</div>
+        </div>
+
+        <div class="proj-row">
+            <div>
+                <h4>Mobile Banking App</h4>
+                <p>FinSecure Ltd.</p>
+            </div>
+            <div>Sarah Johnson</div>
+            <div><span class="proj-badge blue">In Progress</span></div>
+            <div>
+                <div class="progress blue small"></div>
+            </div>
+            <div>Nov 30, 2025</div>
+        </div>
+
+    </div>
+</section>
+</div>
+</body>
+</html>

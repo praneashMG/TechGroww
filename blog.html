@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TechPro Blog - Latest Tech News & Articles</title>
+    <link rel="icon" href="growwpark_logo.jpg">
+
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="responsive-universal.css">
+</head>
+<body>
+<div id="header-placeholder"></div>
+
+<div class="search-panel">
+    <input type="text" id="searchInput" placeholder="Search articles, topics, or tags..." />
+    <button onclick="searchBlogs()">Search</button>
+</div>
+
+<div class="wrapper">
+    <div class="blog-grid" id="blogGrid">
+        <div class="blog-card" data-category="ai"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&h=300&fit=crop" alt="AI Tools"><h3>10 AI Tools for 2025</h3><i>📅 December 10, 2025 | ✍️ Tech Admin</i><p>Boost productivity with the latest AI-powered Tech tools.</p><a href="blogdetails.html">Read More →</a></div>
+        <div class="blog-card" data-category="smart-home"><img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=500&h=300&fit=crop" alt="Smart Home"><h3>Smart Home Tech Guide</h3><i>📅 December 9, 2025 | ✍️ Tech Admin</i><p>Automation, IoT and home intelligence made simple.</p><a href="blogdetails.html">Read More →</a></div>
+        <div class="blog-card" data-category="quantum"><img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=500&h=300&fit=crop" alt="Quantum Computing"><h3>Quantum Computing Basics</h3><i>📅 December 8, 2025 | ✍️ Tech Admin</i><p>Understanding the next wave of computing.</p><a href="blogdetails.html">Read More →</a></div>
+        <div class="blog-card" data-category="security"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=500&h=300&fit=crop" alt="Cybersecurity"><h3>Cybersecurity in 2025</h3><i>📅 December 7, 2025 | ✍️ Tech Admin</i><p>Stay secure with updated protection guidelines.</p><a href="blogdetails.html">Read More →</a></div>
+        <div class="blog-card" data-category="cloud"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&h=300&fit=crop" alt="Cloud Computing"><h3>Cloud Computing Trends</h3><i>📅 December 6, 2025 | ✍️ Tech Admin</i><p>Explore the future of cloud infrastructure.</p><a href="blogdetails.html">Read More →</a></div>
+        <div class="blog-card" data-category="wearables"><img src="https://images.unsplash.com/photo-1557935728-e6d1eaabe558?w=500&h=300&fit=crop" alt="Wearable Tech"><h3>Wearable Tech Revolution</h3><i>📅 December 5, 2025 | ✍️ Tech Admin</i><p>Discover wearable innovations shaping the future.</p><a href="blogdetails.html">Read More →</a></div>
+    </div>
+
+    <aside class="sidebar">
+        <div class="sidebar-box"><h3>📂 Categories</h3><ul><li onclick="filterCategory('all')">All Articles</li><li onclick="filterCategory('ai')">AI & Machine Learning</li><li onclick="filterCategory('cloud')">Cloud Computing</li><li onclick="filterCategory('security')">Cybersecurity</li><li onclick="filterCategory('smart-home')">Smart Home</li><li onclick="filterCategory('quantum')">Quantum Tech</li><li onclick="filterCategory('wearables')">Wearables</li></ul></div>
+        <div class="sidebar-box popular"><h3>🔥 Popular Posts</h3><p>How AI is Changing Business</p><p>5G Technology Explained</p><p>Blockchain for Beginners</p><p>Best Programming Languages 2025</p><p>IoT Security Best Practices</p></div>
+        <div class="sidebar-box newsletter"><h3>📧 Newsletter</h3><p style="font-size: 13px; margin-bottom: 10px;">Get weekly tech updates!</p><input type="email" placeholder="Enter your email" /><button>Subscribe</button></div>
+    </aside>
+</div>
+
+<div class="pagination">
+    <span class="page active">1</span><span class="page">2</span><span class="page">3</span><span class="page">4</span><span class="page">Next →</span>
+</div>
+
+<div id="footer-placeholder"></div>
+
+<script>
+function filterCategory(category) { const cards = document.querySelectorAll('.blog-card'); cards.forEach(card => { card.style.display = (category === 'all' || card.dataset.category === category) ? 'block' : 'none'; }); }
+function searchBlogs() { const query = document.getElementById('searchInput').value.toLowerCase(); const cards = document.querySelectorAll('.blog-card'); cards.forEach(card => { card.style.display = card.textContent.toLowerCase().includes(query) ? 'block' : 'none'; }); }
+</script>
+<script src="common.js" defer></script>
+</body>
+</html>
