@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login | TechPro</title>
-      <link rel="icon" href="growwpark_logo.jpg">
-
+  <title>Login | GrowwTech</title>
+  <link rel="icon" href="growwpark_logo.jpg">
 
   <style>
     /* ================= ROOT THEMES ================= */
@@ -30,7 +29,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Arial, sans-serif;
     }
 
     body {
@@ -43,11 +42,52 @@
       transition: 0.3s;
     }
 
-    /* ================= TOP CONTROLS ================= */
-    .top-controls {
+    /* ================= LOGO & TOP CONTROLS ================= */
+    .header-container {
       position: absolute;
       top: 20px;
-      right: 20px;
+      width: 100%;
+      max-width: 900px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      z-index: 100;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      height: 40px;
+      width: 40px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #065f71, #0ea5b7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: white;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(6, 95, 113, 0.2);
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 24px;
+    margin-bottom: 15px;
+    color: #07ffe6;
+    }
+ .logo-text a {
+  text-decoration: none;
+      font-size: 24px;
+    margin-bottom: 15px;
+    color: #07ffe6;
+    }
+    .top-controls {
       display: flex;
       gap: 10px;
     }
@@ -60,6 +100,12 @@
       color: var(--text);
       cursor: pointer;
       font-size: 14px;
+      transition: all 0.2s;
+    }
+
+    .toggle-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     /* ================= LAYOUT ================= */
@@ -72,6 +118,7 @@
       border-radius: 14px;
       overflow: hidden;
       box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+      margin-top: 40px;
     }
 
     /* ================= LEFT ================= */
@@ -82,6 +129,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      position: relative;
     }
 
     .brand {
@@ -127,6 +175,13 @@
       background: #fff;
       border: none;
       cursor: pointer;
+      transition: all 0.2s;
+      font-weight: 600;
+    }
+
+    .signup-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     }
 
     .signup-btn a {
@@ -161,6 +216,7 @@
       display: block;
       margin-bottom: 6px;
       font-size: 14px;
+      font-weight: 500;
     }
 
     input {
@@ -171,6 +227,12 @@
       background: transparent;
       color: var(--text);
       outline: none;
+      transition: border 0.2s;
+    }
+
+    input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(6, 95, 113, 0.1);
     }
 
     .remember {
@@ -196,6 +258,11 @@
     .remember a {
       color: var(--primary);
       text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .remember a:hover {
+      text-decoration: underline;
     }
 
     .login-btn {
@@ -208,6 +275,14 @@
       font-size: 16px;
       cursor: pointer;
       margin-bottom: 25px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .login-btn:hover {
+      background: #054b5a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(6, 95, 113, 0.2);
     }
 
     .divider {
@@ -215,6 +290,27 @@
       font-size: 14px;
       color: var(--muted);
       margin-bottom: 15px;
+      position: relative;
+    }
+
+    .divider::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 42%;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .divider::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 42%;
+      height: 1px;
+      background: var(--border);
     }
 
     .socials {
@@ -236,6 +332,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: all 0.2s;
+    }
+    
+    .s-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
     }
     
     .s-btn svg {
@@ -250,6 +352,11 @@
       text-decoration: none;
       color: var(--primary);
       font-size: 14px;
+      transition: all 0.2s;
+    }
+
+    .back:hover {
+      text-decoration: underline;
     }
 
     /* ================= RTL SUPPORT ================= */
@@ -261,46 +368,106 @@
       flex-direction: row-reverse;
     }
 
- @media (max-width: 768px) {
-    .wrapper {
-        grid-template-columns: 1fr;
-        margin-top: 70px;
+    html[dir="rtl"] .header-container {
+      flex-direction: row-reverse;
     }
 
-  .left {
-    display: block;
-    padding: 30px;
-    text-align: center;
-  }
+    html[dir="rtl"] .logo-container {
+      flex-direction: row-reverse;
+    }
 
-  .features li {
-    justify-content: center;
-  }
-}
+    html[dir="rtl"] .divider::before {
+      left: auto;
+      right: 0;
+    }
 
+    html[dir="rtl"] .divider::after {
+      right: auto;
+      left: 0;
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        text-align: center;
+        padding: 0 15px;
+      }
+
+      .logo-container {
+        justify-content: center;
+      }
+
+      .wrapper {
+        grid-template-columns: 1fr;
+        margin-top: 100px;
+      }
+
+      .left {
+        padding: 30px;
+        text-align: center;
+      }
+
+      .features li {
+        justify-content: center;
+      }
+
+      .top-controls {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .right {
+        padding: 30px;
+      }
+      
+      .left {
+        padding: 25px;
+      }
+      
+      .brand {
+        font-size: 26px;
+      }
+      
+      .right h2 {
+        font-size: 24px;
+      }
+    }
   </style>
 </head>
 
 <body>
-
-  <div class="top-controls">
-    <button class="toggle-btn" onclick="toggleTheme()">🌙 </button>
-    <button class="toggle-btn" onclick="toggleDir()">LTR / RTL</button>
+  
+  <!-- Header with Logo and Controls -->
+  <div class="header-container">
+    <div class="logo-container">
+    </div>
+    
+    <div class="top-controls">
+      <button class="toggle-btn" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙 Dark Mode</button>
+      <button class="toggle-btn" onclick="toggleDir()" aria-label="Toggle text direction">LTR / RTL</button>
+    </div>
   </div>
+  <br><br>
 
-  <div class="wrapper">
+<div class="wrapper">
+    <div class="left" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <div class="logo-text"><a href="index.html">GrowwTech</a></div>
+      <br>
 
-    <div class="left">
-      <div class="brand"><a href="index.html">Groww TechPro</a></div>
+      <div class="brand"><a href="">Tech Products</a></div>
 
-      <ul class="features">
+      <ul class="features" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; align-items: center;">
         <li><span class="dot"></span> AI-powered dashboard</li>
-        <li><span class="dot"></span> Real-time cloud sync</li>
-        <li><span class="dot"></span> Secure encrypted login</li>
-        <li><span class="dot"></span> 24/7 tech support</li>
+        <li><span class="dot"></span> Real-time cloud datas</li>
+        <li><span class="dot"></span> Secure encrypted tech</li>
       </ul>
+      <br>
 
       <p class="small">Don't have an account?</p>
+  
       <button class="signup-btn">
         <a href="signup.html">Sign Up Now</a>
       </button>
@@ -357,17 +524,29 @@
       </div>
 
     </div>
-
   </div>
 
   <script>
     function toggleTheme() {
       document.body.classList.toggle("dark");
+      const themeBtn = document.querySelector('.toggle-btn[aria-label*="dark"]');
+      if (document.body.classList.contains("dark")) {
+        themeBtn.textContent = "☀️ Light Mode";
+      } else {
+        themeBtn.textContent = "🌙 Dark Mode";
+      }
     }
 
     function toggleDir() {
       const html = document.documentElement;
-      html.dir = html.dir === "ltr" ? "rtl" : "ltr";
+      const dirBtn = document.querySelector('.toggle-btn[aria-label*="direction"]');
+      if (html.dir === "ltr") {
+        html.dir = "rtl";
+        dirBtn.textContent = "RTL / LTR";
+      } else {
+        html.dir = "ltr";
+        dirBtn.textContent = "LTR / RTL";
+      }
     }
   </script>
 

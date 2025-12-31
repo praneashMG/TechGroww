@@ -39,6 +39,11 @@ header {
   flex-shrink: 0;
 }
 
+#navbar .logo-group h2 a{
+   color: #07ffe6;
+  text-decoration: none;
+
+}
 #navbar .logo1 {
   font-size: 24px;
   color: #07ffe6;
